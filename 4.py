@@ -48,7 +48,9 @@ class Student:
         result=self.result()
         total=self.total()
         avg=self.avg()
-        print(f"Name:{self.name} \n Marks in {self.subjects}:{self.marks} \n Result:{result} \n Average:{avg} \n Total:{total}")
+        print(f"Name:{self.name} \n Result:{result} \n Average:{avg} \n Total:{total}")
+        for sub,marks in zip(self.subjects,self.marks):
+            print(f"{sub}: {marks}")
 s1=Student("Vaishu",[85,92,78],["Python","Science","Cloud Computing"])
 s2=Student("Ravi",[37,65,48],["Maths","OOPS","English"])
 s3=Student("Priya",[90,95,88],["Computer Networks","Science","Java"])
