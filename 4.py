@@ -30,21 +30,25 @@ class Student:
         self.subjects=subjects
     def avg(self):
         return sum(self.marks)/len(self.marks)
-    def sum(self):
+    def total(self):
         return sum(self.marks)
     def result(self):
-        if self.avg()>=90:
+        avg_marks=self.avg()
+        if avg_marks>=90:
             return "A"
-        elif self.avg()>=80:
+        elif avg_marks>=80:
             return "B"
-        elif self.avg()>=70:
+        elif avg_marks  >=70:
             return "C"
-        elif self.avg()>=60:
+        elif avg_marks>=60:
             return "D"
         else:
             return "F"
     def display(self):
-        print(f"Name:{self.name} \n Marks in {self.subjects}:{self.marks} \n Result:{self.result()} \n Average:{self.avg()} \n Total:{self.sum()}")
+        result=self.result()
+        total=self.total()
+        avg=self.avg()
+        print(f"Name:{self.name} \n Marks in {self.subjects}:{self.marks} \n Result:{result} \n Average:{avg} \n Total:{total}")
 s1=Student("Vaishu",[85,92,78],["Python","Science","Cloud Computing"])
 s2=Student("Ravi",[37,65,48],["Maths","OOPS","English"])
 s3=Student("Priya",[90,95,88],["Computer Networks","Science","Java"])
