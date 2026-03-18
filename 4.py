@@ -51,6 +51,8 @@ class Student:
         print(f"Name:{self.name} \n Result:{result} \n Average:{avg} \n Total:{total}")
         for sub,marks in zip(self.subjects,self.marks):
             print(f"{sub}: {marks}")
+        print(f"Highest marks:{max(self.marks)} in {self.subjects[self.marks.index(max(self.marks))]}")
+        print(f"Lowest marks:{min(self.marks)} in {self.subjects[self.marks.index(min(self.marks))]}")
 s1=Student("Vaishu",[85,92,78],["Python","Science","Cloud Computing"])
 s2=Student("Ravi",[37,65,48],["Maths","OOPS","English"])
 s3=Student("Priya",[90,95,88],["Computer Networks","Science","Java"])
