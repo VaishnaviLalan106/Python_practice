@@ -9,5 +9,11 @@ print(num)
 print(len(num))
 #print(num[10])  index out of range 
 num.remove(5)     #deletion of element 
-num.insert(0,30)   #adding element into index before it 
+num.insert(0,30) #adding element into index before it 
+num.append(78) #add element at last
+print(num)
+print(max(num))
+print(min(num))
+search=num[8]
+print(search)   # access element by index O(1)
 print(num)
