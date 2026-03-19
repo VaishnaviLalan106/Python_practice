@@ -39,3 +39,20 @@ def findSmallestMissingPositive(orderNumbers):
             return i + 1
     return n + 1
 ```
+3. Given a string containing letters, digits, and symbols, determine if it reads the same forwards and backwards when considering only alphabetic characters (case-insensitive).
+
+```python 
+def isAlphabeticPalindrome(code):
+    letter=[]
+    for ch in code:
+        if ch.isalpha():
+            letter.append(ch)
+    letter=[ch.lower() for ch in letter]
+    if not letter:
+        return 1
+    elif letter==letter[::-1]:
+        return 1
+    else:
+        return 0
+```
+
