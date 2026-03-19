@@ -1,9 +1,10 @@
 num=[1,2,3,4,5]
 print(num[2])
-extra=list(num)
-extra.extend([9,28,348])
-print(extra)
-print(extra[6])
-print(len(num))
+num.extend([9,28,348])
+print(num[6])
 extra=5*len(num) #wanted to resize array but couldnt 
-num=extra
+print(extra)
+num[0]=99
+print(num)
+print(len(num))
+#print(num[10])  index out of range 
