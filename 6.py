@@ -29,12 +29,13 @@ class Student:
             print(f"{sub}: {marks}")
         print(f"Highest marks:{max(self.marks)} in {self.subjects[self.marks.index(max(self.marks))]}")
         print(f"Lowest marks:{min(self.marks)} in {self.subjects[self.marks.index(min(self.marks))]}")
-s1=Student("Vaishu",[85,92,78],["Python","Science","Cloud Computing"])
+""" s1=Student("Vaishu",[85,92,78],["Python","Science","Cloud Computing"])
 s2=Student("Ravi",[37,65,48],["Maths","OOPS","English"])
 s3=Student("Priya",[90,95,88],["Computer Networks","Science","Java"])
 s1.display()
 s2.display()
-s3.display()
+s3.display() """
+students=[]
 while True:
     print('''Options:\n
               1. Add Student \n
@@ -46,16 +47,17 @@ while True:
         name=input("Enter name:")
         marks=list(map(int,input("Enter marks:").split()))
         subjects=list(map(str,input("Enter subjects:").split()))
-        s1=Student(name,marks,subjects)
-        s1.display()
+        s=Student(name,marks,subjects)
+        students.append(s)
     elif choice==2:
-        s1.display()
+        for s in students:
+            s.display()
     elif choice==3:
         name=input("Enter name:")
         marks=list(map(int,input("Enter marks:").split()))
         subjects=list(map(str,input("Enter subjects:").split()))
-        s1=Student(name,marks,subjects)
-        s1.display()
+        s=Student(name,marks,subjects)
+        students.append(s)  
     elif choice==4:
         print("Byee")
         break
