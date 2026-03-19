@@ -8,3 +8,6 @@ num[0]=99
 print(num)
 print(len(num))
 #print(num[10])  index out of range 
+num.remove(5)     #deletion of element 
+num.insert(0,30)   #adding element into index before it 
+print(num)
