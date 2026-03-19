@@ -1,27 +1,3 @@
-class student:
-    name="vaishu"
-    age=21
-s1=student()
-print(s1.name)
-print(s1.age)
-
-class Book:
-    title="Harry Potter"
-    author="J.K. Rowling"
-    price=350 
-    
-b1=Book()
-print(b1.title)
-
-class Student:
-    def __init__(self,name,age,rollno):
-        self.name=name
-        self.age=age
-        self.rollno=rollno
-s1=Student("Vaishu",21,101)
-s2=Student("Ravi",22,102)
-s3=Student("Priya",20,103)
-print(s1.name,s2.age,s3.rollno)
 
 class Student:
     def __init__(self,name,marks,subjects):
@@ -59,3 +35,27 @@ s3=Student("Priya",[90,95,88],["Computer Networks","Science","Java"])
 s1.display()
 s2.display()
 s3.display()
+while True:
+    print('''Options:\n
+              1. Add Student \n
+              2. View Student\n
+              3. Update Student\n
+              4. Exit''')
+    choice=int(input("Enter your choice:"))
+    if choice==1:
+        name=input("Enter name:")
+        marks=list(map(int,input("Enter marks:").split()))
+        subjects=list(map(str,input("Enter subjects:").split()))
+        s1=Student(name,marks,subjects)
+        s1.display()
+    elif choice==2:
+        s1.display()
+    elif choice==3:
+        name=input("Enter name:")
+        marks=list(map(int,input("Enter marks:").split()))
+        subjects=list(map(str,input("Enter subjects:").split()))
+        s1=Student(name,marks,subjects)
+        s1.display()
+    elif choice==4:
+        print("Byee")
+        break
