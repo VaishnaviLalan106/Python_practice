@@ -1,4 +1,5 @@
 
+from re import search
 class Student:
     def __init__(self,name,marks,subjects):
         self.name=name
@@ -41,7 +42,9 @@ while True:
               1. Add Student \n
               2. View Student\n
               3. Update Student\n
-              4. Exit''')
+              4. Search Student\n
+              5. Delete Student\n
+              6. Exit''')
     choice=int(input("Enter your choice:"))
     if choice==1:
         name=input("Enter name:")
@@ -53,11 +56,38 @@ while True:
         for s in students:
             s.display()
     elif choice==3:
-        name=input("Enter name:")
-        marks=list(map(int,input("Enter marks:").split()))
-        subjects=list(map(str,input("Enter subjects:").split()))
-        s=Student(name,marks,subjects)
-        students.append(s)  
+        search=input("Enter name to update:\n")
+        found = False
+        for s in students:
+           if s.name.lower() == search.lower():
+              s.marks = list(map(int, input("Enter new marks: ").split()))
+              s.subjects = list(map(str, input("Enter new subjects: ").split()))
+              print("Student updated")
+              found = True
+              break
+        if not found:
+            print("Student not found")
     elif choice==4:
-        print("Byee")
+        found=False
+        findddd=input("Enter the name to search:")
+        for s in students:
+            if s.name==findddd:
+                s.display()
+                found=True
+                break
+        if not found:
+            print("Student not found")
+    elif choice==5:
+        found=False
+        getout=input("Enter name to remove:\n").strip()
+        for s in students:
+            if s.name.lower()==getout.lower():
+                students.remove(s)
+                print("Student succesfully removed\n")
+                found=True
+                break
+        if not found:
+            print("Student not found")
+    else:
+        print("byee")
         break
