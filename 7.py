@@ -1,4 +1,4 @@
-""" class myArray:
+class myArray:
     def __init__(self,totalsize,usedsize):
         self.totalsize=totalsize
         self.usedsize=usedsize
@@ -54,8 +54,8 @@ for i in range(len(nums)):
 if not found:
     print("False")
 print(set)
- """
- 
+
+
 nums=[1,2,3,4,5,6]
 print(nums)
 max_element=nums[0]
