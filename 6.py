@@ -1,5 +1,4 @@
-
-from re import search
+import json 
 class Student:
     def __init__(self,name,marks,subjects):
         self.name=name
@@ -30,13 +29,36 @@ class Student:
             print(f"{sub}: {marks}")
         print(f"Highest marks:{max(self.marks)} in {self.subjects[self.marks.index(max(self.marks))]}")
         print(f"Lowest marks:{min(self.marks)} in {self.subjects[self.marks.index(min(self.marks))]}")
+    def save_students(students):
+        data =[]
+        for s in students:
+            data.append({
+              "name": s.name,
+              "marks": s.marks,
+              "subjects": s.subjects
+            })
+    
+        with open("students.json", "w") as f:
+           json.dump(data, f)
+    def load_students():
+        students = []
+        try:
+             with open("students.json", "r") as f:
+                data = json.load(f)
+            
+                for item in data:
+                    s = Student(item["name"], item["marks"], item["subjects"])
+                    students.append(s)
+        except:
+            pass
+        return students
 """ s1=Student("Vaishu",[85,92,78],["Python","Science","Cloud Computing"])
 s2=Student("Ravi",[37,65,48],["Maths","OOPS","English"])
 s3=Student("Priya",[90,95,88],["Computer Networks","Science","Java"])
 s1.display()
 s2.display()
 s3.display() """
-students=[]
+students=Student.load_students()
 while True:
     print('''Options:\n
               1. Add Student \n
@@ -52,9 +74,12 @@ while True:
         subjects=list(map(str,input("Enter subjects:").split()))
         s=Student(name,marks,subjects)
         students.append(s)
+        Student.save_students(students)
     elif choice==2:
         for s in students:
             s.display()
+        if not students:
+            print("Students are misssinggg !!!")
     elif choice==3:
         search=input("Enter name to update:\n")
         found = False
@@ -63,6 +88,7 @@ while True:
               s.marks = list(map(int, input("Enter new marks: ").split()))
               s.subjects = list(map(str, input("Enter new subjects: ").split()))
               print("Student updated")
+              Student.save_students(students)
               found = True
               break
         if not found:
@@ -71,7 +97,7 @@ while True:
         found=False
         findddd=input("Enter the name to search:")
         for s in students:
-            if s.name==findddd:
+            if s.name.lower()==findddd.lower():
                 s.display()
                 found=True
                 break
@@ -84,6 +110,7 @@ while True:
             if s.name.lower()==getout.lower():
                 students.remove(s)
                 print("Student succesfully removed\n")
+                Student.save_students(students)
                 found=True
                 break
         if not found:
@@ -91,3 +118,4 @@ while True:
     else:
         print("byee")
         break
+
