@@ -1,4 +1,4 @@
-""" class myArray:
+class myArray:
     def __init__(self,totalsize,usedsize):
         self.totalsize=totalsize
         self.usedsize=usedsize
@@ -38,7 +38,7 @@ for i in range(len(nums)):
 if not found:
     print("False")
 print(hashset)
-"""
+
 
 nums=[9,8,1,2,4,1]         # using only set O(n) tc
 print(nums)
