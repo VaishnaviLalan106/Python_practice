@@ -55,4 +55,16 @@ def isAlphabeticPalindrome(code):
     else:
         return 0
 ```
+3. Check for Non-Identical String Rotation
+Given two strings s1 and s2, return 1 if s2 is a rotation of s1 but not identical to s1, otherwise return 0. 
 
+```python 
+
+def isNonTrivialRotation(s1, s2):
+    if len(s1)!=len(s2):
+        return False
+    if s1!=s2 and s2 in s1+s1:
+        return True
+    else:
+        return False 
+```
