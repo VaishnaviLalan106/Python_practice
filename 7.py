@@ -12,7 +12,7 @@
 
 marks=myArray(10,5)
 marks.set_values()
-marks.show_values() """
+marks.show_values()
 
 nums=list(map(int,input("enter the numbers:").split()))    #using O(n^2) tc using normal arrays
 found=False
@@ -38,3 +38,19 @@ for i in range(len(nums)):
 if not found:
     print("False")
 print(hashset)
+"""
+
+nums=[9,8,1,2,4,1]         # using only set O(n) tc
+print(nums)
+set=set()         #because set stores only distinct values
+found=False
+for i in range(len(nums)):
+    if nums[i] in set:
+        print("True")
+        found=True
+        break
+    else:
+        set.add(nums[i])
+if not found:
+    print("False")
+print(set)
