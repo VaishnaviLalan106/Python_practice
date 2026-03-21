@@ -1,8 +1,26 @@
-#anagram using sorted function
+""" #anagram using sorted function
 s="listen"
 t="silent"                       #using sorted function (very easy one)  O(1) i guessss
-if sorted(t)==sorted(s):
+if sorted(s)==sorted(t):
+    print("True")
+else:
+    print("False") """
+
+s=str(input("Enter a string1:"))
+t=str(input("Enter string 2:"))
+if len(s)!=len(t):
+    print("False")
+    exit()
+sdict={}                 #O(s+t) using hashmap , needs extra space thats it
+tdict={}
+for i in s:
+    sdict[i]=sdict.get(i,0)+1
+for i in t:
+    tdict[i]=tdict.get(i,0)+1
+print(sdict)
+print(tdict)
+if sdict==tdict:
     print("True")
 else:
     print("False")
-
+        
