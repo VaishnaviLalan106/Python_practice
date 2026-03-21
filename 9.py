@@ -39,3 +39,7 @@ for c in sdict:
         break
 else:
     print("True")
+
+#if we need to do it in O(1) space complexity we used sorted function but regarding time it takes O(n), O(log n) or sometimes O(1) depends on the sorting algo used
+sorted(s)==sorted(t)
+print("True")
