@@ -4,7 +4,7 @@ t="silent"                       #using sorted function (very easy one)  O(1) i 
 if sorted(s)==sorted(t):
     print("True")
 else:
-    print("False") """
+    print("False") 
 
 s=str(input("Enter a string1:"))
 t=str(input("Enter string 2:"))
@@ -22,5 +22,20 @@ print(tdict)
 if sdict==tdict:
     print("True")
 else:
+    print("False")"""
+
+s=str(input("Enter a string1:"))
+t=str(input("Enter string 2:"))
+if len(s)!=len(t):
     print("False")
-        
+    exit()
+sdict,tdict={},{}                 #  takes extra space complexity
+for i in range(len(s)):
+    sdict[s[i]]=1+sdict.get(s[i],0)
+    tdict[t[i]]=1+tdict.get(t[i],0)
+for c in sdict:
+    if sdict[c]!=tdict.get(c,0):
+        print("False")
+        break
+else:
+    print("True")
