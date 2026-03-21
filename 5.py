@@ -17,3 +17,6 @@ print(min(num))
 search=num[8]
 print(search)   # access element by index O(1)
 print(num)
+
+
+
