@@ -68,3 +68,21 @@ def isNonTrivialRotation(s1, s2):
     else:
         return False 
 ```
+3. Target Index Search
+Given a sorted array of distinct integers and a target value, return the index of the target or -1 if not found.
+
+```python
+
+def binarySearch(nums, target):
+    low=0
+    high=(len(nums)-1)
+    while low<=high:
+        mid=(low+high)//2
+        if nums[mid]==target:
+            return mid
+        elif nums[mid]>target:
+            high=mid-1
+        else:
+            low=mid+1
+    return -1
+```
