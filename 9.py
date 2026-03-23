@@ -1,4 +1,4 @@
-""" #anagram using sorted function
+#anagram using sorted function
 s="listen"
 t="silent"                       #using sorted function (very easy one)  O(1) i guessss
 if sorted(s)==sorted(t):
@@ -43,7 +43,7 @@ else:
 #if we need to do it in O(1) space complexity we used sorted function but regarding time it takes O(n), O(log n) or sometimes O(1) depends on the sorting algo used
 sorted(s)==sorted(t)
 print("True")
-"""
+
 
 nums=[1,2,3,4,16,90,8,7,8,9,12,7]
 target=7
