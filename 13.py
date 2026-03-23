@@ -42,3 +42,35 @@ print(max_count)
 for key,values in group.items():
     if values==max_count:
         print(f"{key} is repeated {values} times")
+
+
+nums=[1,2,2,4,4,3,5,3,5]
+group={}
+for i in nums:
+    if i in group:
+        group[i]+=1
+    else:
+        group[i]=1
+print(group)
+found=False
+for key,values in group.items():
+   if values==1:
+    print(f"{key} is a non repeated element")
+    found=True
+    break
+if not found:
+    print("no non repeated element found") 
+
+nums=[1,2,3,4,2,6,3]
+group={}
+for i in nums:
+    if i in group:
+        group[i]+=1
+    else:
+        group[i]=1
+print(group)
+for i in nums:
+    if group[i]!=1:
+        print(f"{i} is first element to be repeated {group[i]} times")
+    break
+    
