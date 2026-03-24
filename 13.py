@@ -22,7 +22,7 @@ print(f"{minimum_count} is repeated the least {group[minimum_count]} times")
 print(group)
 
 
-#by doing this it deletes original copy og dictionary so we used to copy data
+#by doing this it deletes original copy oF dictionary so we used to copy data
 group={1: 2, 2: 3, 3: 2, 5: 3, 7: 1, 8: 2}
 maximum_count=max(group,key=group.get)
 print(f"{maximum_count} is repeated the most {group[maximum_count]} times")
@@ -88,7 +88,7 @@ for key,values in chatty.items():
     if values > 1:
         print(f"{key} appears {values} times")
 
-#number appears monly once 
+#number appears only once 
 nums=[1,2,2,3,4,4,4,5]
 chatty={}
 for i in nums:
@@ -97,9 +97,11 @@ for i in nums:
     else:
         chatty[i]=1  
 print(chatty)
-for i in nums:
+for i in nums:          
     if chatty[i]==1:
         print(f"{i} repeated {chatty[i]} times") 
     
-      
+#either way simple
+if values==1:
+    print(f"{key} repeated {values} times")
         
