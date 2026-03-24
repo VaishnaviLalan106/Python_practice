@@ -1,4 +1,4 @@
-a=[1,2,3,4]
+""""a=[1,2,3,4]
 b=[3,4,5,6]
 int1=set(a)
 int2=set(b)
@@ -14,4 +14,13 @@ for s in strs:
     else:
         group[key]=[s]
 print(group)
-print(group.values())
+print(group.values()) """
+
+a=[1,2,3,2,1]
+b=[5,6,7,4]
+print(a + b)
+set1=set(a)
+set2=set(b)
+print(list(set1 | set2))
+print(list(set1 - set2))
+print(list(set1 ^ set2))
