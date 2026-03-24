@@ -74,3 +74,32 @@ for i in nums:
         print(f"{i} is first element to be repeated {group[i]} times")
     break
     
+
+#number appearing more than once
+nums=[1,2,2,3,4,3]
+chatty={}
+for i in nums:
+    if i in chatty:
+        chatty[i]+=1
+    else:
+        chatty[i]=1  
+print(chatty)
+for key,values in chatty.items():
+    if values > 1:
+        print(f"{key} appears {values} times")
+
+#number appears monly once 
+nums=[1,2,2,3,4,4,4,5]
+chatty={}
+for i in nums:
+    if i in chatty:
+        chatty[i]+=1
+    else:
+        chatty[i]=1  
+print(chatty)
+for i in nums:
+    if chatty[i]==1:
+        print(f"{i} repeated {chatty[i]} times") 
+    
+      
+        
