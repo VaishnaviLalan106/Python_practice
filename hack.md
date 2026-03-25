@@ -86,3 +86,24 @@ def binarySearch(nums, target):
             low=mid+1
     return -1
 ```
+
+4. Find First Occurrence
+Given a sorted array of integers that may contain duplicates, return the index of the first occurrence of a target value or -1 if not found.
+
+```python
+
+def findFirstOccurrence(nums, target):
+    low=0
+    high=(len(nums)-1)
+    result=-1
+    while low<=high:
+        mid=(low+high)//2
+        if nums[mid]==target:
+            result=mid
+            high=mid-1
+        elif nums[mid]<target:
+            low=mid+1
+        else:
+            high=mid-1
+    return result
+```
