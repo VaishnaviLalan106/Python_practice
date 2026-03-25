@@ -49,3 +49,15 @@ print(countvo)
 print(consonants)
 print("Vowels= ",len(countvo))
 print("Consosnants= ",len(consonants))
+
+#to save memory use direct without list separation and len
+word="malayalam"
+vowels='aeiou'
+v=c=0
+for i in word:
+    if i in vowels:
+        v+=1
+    else:
+        c+=1
+print("Vowels= ",v)
+print("Consosnants= ",c)
