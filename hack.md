@@ -107,3 +107,17 @@ def findFirstOccurrence(nums, target):
             high=mid-1
     return result
 ```
+4. Maximum Number of Non-Overlapping Intervals
+Given an array of intervals where each interval has a start and end time, return the maximum number of non-overlapping intervals.
+
+```python
+def maximizeNonOverlappingMeetings(meetings):
+    meetings.sort(key=lambda x:x[1])
+    count=0
+    last_end=float('-inf')
+    for start,finish in meetings:
+        if start>=last_end:
+            count+=1
+            last_end=finish
+    return count
+```
