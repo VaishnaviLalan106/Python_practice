@@ -28,3 +28,24 @@ for i in range(len(bucket)-1,0,-1):
         result.append(i)
         if len(result)==k:
             print(result)
+
+
+#vowels and consosnants
+word=str(input("enter the word")).lower().strip()
+vowels=['a','e','i','o','u']
+split=list(word)
+countvo=[]
+consonants=[]
+for i in split:
+    if i.isalpha() and i in vowels:
+        countvo.append(i)
+        print(f"{i} is vowel")     #for my knowledge purpose have done this
+    elif i.isalpha():
+        consonants.append(i)
+        print(f"{i} is consosnant")
+    else:
+        print(f"{i} is not an alphabet")
+print(countvo)
+print(consonants)
+print("Vowels= ",len(countvo))
+print("Consosnants= ",len(consonants))
