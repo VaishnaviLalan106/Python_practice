@@ -10,6 +10,7 @@ int linearsearch(int arr[],int size,int element){
 }
 
 int main(){
+    //unsorted array for linear search
     int arr[]={1,56,23,6,2,12,78,9,90,4,256,890};
     int size=sizeof(arr)/sizeof(int);
     int element=7;
