@@ -1,4 +1,4 @@
-""" #division operatio n which takes O(n) tc which is simple but time taking
+""" """ #division operatio n which takes O(n) tc which is simple but time taking
 nums=[1,2,3,4]
 answer=1
 for i in nums:
@@ -45,7 +45,6 @@ for ch in word:
         seen.add(ch)
         res+=ch
 print(res)
- """
 
 #repeated characters in string
 word = "vaishu"
@@ -60,5 +59,22 @@ for i in seen:
         rep[i]=1
 print(rep)
 for key,value in rep.items():
+    print(f"{key}:{value}") 
+
+word =str(input("enter the string")).strip().lower()
+print("original string",word)
+rep={}
+for i in word:
+    if i.isalpha():
+        if i in rep:
+            rep[i]+=1
+        else:
+            rep[i]=1
+print(rep)
+for key,value in rep.items():
     print(f"{key}:{value}")
+max_count=max(rep.values())
+for key,value in rep.items():
+    if value==max_count:
+        print(f"{key} value repeated {max_count} times")
 
