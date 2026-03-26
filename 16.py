@@ -9,7 +9,7 @@ list1.append(answer//1)
 list1.append(answer//2)
 list1.append(answer//3)
 list1.append(answer//4)
-print(list1) """
+print(list1) 
 
 
 #reducetime complexity in O(n) and easy way to get this ARYGH
@@ -25,4 +25,13 @@ for i in range(len(nums)-1,-1,-1):
     res[i]*=suffix
     suffix*=nums[i]
 print(suffix)
-print(res)
+print(res) """
+
+
+#remove duplicate in string
+word=str(input("enter the string")).strip().lower()
+seen=""
+for ch in word:
+    if ch not in seen:
+        seen+=ch
+print(seen)
