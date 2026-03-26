@@ -1,4 +1,4 @@
-""" #division operatio n which takes O(n) tc which is simple but time taking
+#division operatio n which takes O(n) tc which is simple but time taking
 nums=[1,2,3,4]
 answer=1
 for i in nums:
@@ -25,13 +25,23 @@ for i in range(len(nums)-1,-1,-1):
     res[i]*=suffix
     suffix*=nums[i]
 print(suffix)
-print(res) """
+print(res)
 
 
-#remove duplicate in string
+#remove duplicate in string this is using logic
 word=str(input("enter the string")).strip().lower()
 seen=""
 for ch in word:
     if ch not in seen:
         seen+=ch
 print(seen)
+
+#set looksup faster and is O(n) tc for longer strings
+word=str(input("enter the string")).strip().lower()
+seen=set()
+res=""
+for ch in word:
+    if ch.isalpha() and ch not in seen:
+        seen.add(ch)
+        res+=ch
+print(res)
