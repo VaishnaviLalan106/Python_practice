@@ -1,4 +1,4 @@
-""" """ #division operatio n which takes O(n) tc which is simple but time taking
+#division operatio n which takes O(n) tc which is simple but time taking
 nums=[1,2,3,4]
 answer=1
 for i in nums:
@@ -76,5 +76,20 @@ for key,value in rep.items():
 max_count=max(rep.values())
 for key,value in rep.items():
     if value==max_count:
-        print(f"{key} value repeated {max_count} times")
+        print(f"{key} value repeated {max_count} times") 
 
+#words repeated frequency using split
+string="hi hello hi hi"
+group={}
+for word in string.split():
+    if word in group:
+        group[word]+=1
+    else:
+        group[word]=1
+print(group)
+for key,value in group.items():
+    print(f"{key}:{value}")
+max_count=max(group.values())
+for key,value in group.items():
+    if value==max_count:
+        print(f"{key} is repeated {value} times")
