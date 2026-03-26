@@ -121,3 +121,20 @@ def maximizeNonOverlappingMeetings(meetings):
             last_end=finish
     return count
 ```
+
+5. Validate Properly Nested Brackets
+Given a string, check if all brackets ('()', '{}', '[]') are properly matched and nested. Return 1 if valid, otherwise return 0.
+
+```python
+def areBracketsProperlyMatched(code_snippet):
+    stack=[]
+    pairs={')':'(',']':'[','}':'{'}
+    for ch in code_snippet:
+        if ch in "([{":
+            stack.append(ch)
+        elif ch in ")]}":
+            if not stack or stack[-1]!=pairs[ch]:
+                return 0
+            stack.pop()
+    return 1 if not stack else 0
+```
