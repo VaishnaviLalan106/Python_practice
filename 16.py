@@ -1,4 +1,4 @@
-#division operatio n which takes O(n) tc which is simple but time taking
+""" #division operatio n which takes O(n) tc which is simple but time taking
 nums=[1,2,3,4]
 answer=1
 for i in nums:
@@ -45,3 +45,20 @@ for ch in word:
         seen.add(ch)
         res+=ch
 print(res)
+ """
+
+#repeated characters in string
+word = "vaishu"
+print("original string",word)
+seen=set(word)           # converted into set for easy lookup
+print("in set",seen)
+rep={}
+for i in seen:
+    if i in rep:
+        rep[i]+=1
+    else:
+        rep[i]=1
+print(rep)
+for key,value in rep.items():
+    print(f"{key}:{value}")
+
