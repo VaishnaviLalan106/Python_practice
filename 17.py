@@ -69,13 +69,29 @@ else:
     print(True)
  """
 
-#to check if two strings are anagrams
+""" #to check if two strings are anagrams  
 word1=str(input("Enter a word:")).lower().strip()
 word2=str(input("Enter a word:")).lower().strip()
 for ch in word1:
-    if ch in word2 and len(word1)==len(word2):
+    if ch in word2 and len(word1)==len(word2):  # here we only checked character existence not anagarms 
         print("Anagrams")
         break
     else:
         print("Not Anagrams")
-        break
+        break """
+
+#to properly check anagrams we need to do this
+word1=str(input("Enter a word:")).lower().replace(" ","")
+word2=str(input("Enter a word:")).lower().replace(" ","")
+core1={}
+core2={}
+for i in word1:
+    core1[i]=core1.get(i,0)+1
+for i in word2:
+    core2[i]=core2.get(i,0)+1
+print(core1)
+print(core2)
+if core1==core2:
+    print("Anagrams")
+else:
+    print("Not Anagrams")
