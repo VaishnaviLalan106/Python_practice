@@ -96,7 +96,7 @@ if core1==core2:
 else:
     print("Not Anagrams") """
 
-#first non-repeated character
+""" #first non-repeated character
 str=str(input("Enter a string:")).lower().strip()
 count={}
 for i in str:
@@ -112,10 +112,34 @@ for i in str:
         found=True
         break 
 if not found:
-    print("No non-repeated character found")
+    print("No non-repeated character found") """
 
 """other way is 
 for key,values in count.items():
     if values==1:
         print(f"{key} is the first non-repeated character")
         break """
+#type 1
+word1="a man, a plan, a canal:panama"
+word1=word1.lower().replace(" ","").replace(",","").replace(":","")
+if word1.isalpha() and word1==word1[::-1]:
+    print("Palindrome")
+else:
+    print("Not a Palindrome")
+
+#type 2
+word1=input("Enter a word:").lower().strip()
+clean=""
+for ch in word1:
+    if ch.isalpha():
+        clean+=ch
+print(clean)
+found=False
+for i in range(len(clean)):
+    if clean[i]==clean[len(clean)-i-1]:
+        found=True
+        print("Palindrome")
+        break
+if not found:
+    print("Not a Palindrome")
+        
