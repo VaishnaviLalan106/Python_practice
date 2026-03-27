@@ -80,7 +80,7 @@ for ch in word1:
         print("Not Anagrams")
         break """
 
-#to properly check anagrams we need to do this
+""" #to properly check anagrams we need to do this
 word1=str(input("Enter a word:")).lower().replace(" ","")
 word2=str(input("Enter a word:")).lower().replace(" ","")
 core1={}
@@ -94,4 +94,28 @@ print(core2)
 if core1==core2:
     print("Anagrams")
 else:
-    print("Not Anagrams")
+    print("Not Anagrams") """
+
+#first non-repeated character
+str=str(input("Enter a string:")).lower().strip()
+count={}
+for i in str:
+    if i in count:
+        count[i]+=1
+    else:
+        count[i]=1
+print(count)
+found=False
+for i in str:
+    if count[i]==1:
+        print(f"{i} is the first non-repeated character")
+        found=True
+        break 
+if not found:
+    print("No non-repeated character found")
+
+"""other way is 
+for key,values in count.items():
+    if values==1:
+        print(f"{key} is the first non-repeated character")
+        break """
