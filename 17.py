@@ -1,4 +1,4 @@
-import collections
+""" import collections
 from collections import defaultdict
 #invalid sudoku
 sudoku_board = [
@@ -67,3 +67,15 @@ for r in range(9):
     break
 else:
     print(True)
+ """
+
+#to check if two strings are anagrams
+word1=str(input("Enter a word:")).lower().strip()
+word2=str(input("Enter a word:")).lower().strip()
+for ch in word1:
+    if ch in word2 and len(word1)==len(word2):
+        print("Anagrams")
+        break
+    else:
+        print("Not Anagrams")
+        break
