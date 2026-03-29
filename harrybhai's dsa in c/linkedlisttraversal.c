@@ -17,11 +17,14 @@ int main(){
     struct Node *head;
     struct Node *second;
     struct Node *third;
+    struct Node *fourth;
 
     //allocate memory for nodes in heap 
     head=(struct Node*)malloc(sizeof(struct Node));
     second=(struct Node*)malloc(sizeof(struct Node));
     third=(struct Node*)malloc(sizeof(struct Node));
+    fourth=(struct Node*)malloc(sizeof(struct Node));
+
 
     // allocate data for head node
     head->data=7;
@@ -32,8 +35,13 @@ int main(){
     second->next=third;
 
     // terminate in third node
-    third->data=66;
-    third->next=NULL;
+    third->data=21;
+    third->next=fourth;
+    
+    // to put fourth node and terminate it
+    fourth->data=66;
+    fourth->next=NULL;
+
     LinkedlistTraversal(head);
     return 0;
 }
