@@ -1,4 +1,4 @@
-""" #encode
+#encode
 word="Hello, World!!"
 strs=word.split(" ")
 print(strs)
@@ -18,9 +18,9 @@ while i < len(strs):
     length=int(strs[i:j])
     res.append(strs[j+1:j+1+length])
     i=j+1+length
-print(res) """
+print(res)
 
-""" #second largest
+#second largest
 nums=list(map(int,input("Enter the numbers separated by space:").split()))
 nums=list(set(nums))
 print(nums)
@@ -35,9 +35,9 @@ max2=nums[0]
 for i in range(len(nums)):
     if nums[i]>max2:
         max2=nums[i]
-print(max2) """
+print(max2)
 
-""" #add pairss to get sum
+#add pairss to get sum
 nums=[2,3,4,5,6,7,8]
 target=7                                     #brute force approach
 for i in range(len(nums)):
@@ -45,10 +45,10 @@ for i in range(len(nums)):
         if nums[i]+nums[j]==target:
             print(f"{nums[i]}+{nums[j]}={target}")
         break
- """
+
 #other logic
-nums=[2,3,4,5,6,7,8]
-target=7
+nums=list(map(int,input("Enter the numbers separated by space:").split()))
+target=int(input("Enter the target sum:"))
 seen=set()
 pairs=[]
 for i in nums:
