@@ -20,7 +20,7 @@ while i < len(strs):
     i=j+1+length
 print(res) """
 
-#second largest
+""" #second largest
 nums=list(map(int,input("Enter the numbers separated by space:").split()))
 nums=list(set(nums))
 print(nums)
@@ -35,7 +35,15 @@ max2=nums[0]
 for i in range(len(nums)):
     if nums[i]>max2:
         max2=nums[i]
-print(max2)
+print(max2) """
 
-   
- 
+#add pairss to get sum
+nums=[2,3,4,5,6,7,8]
+target=7                                     #brute force approach
+for i in range(len(nums)):
+    for j in range(i+1,len(nums)):
+        if nums[i]+nums[j]==target:
+            print(f"{nums[i]}+{nums[j]}={target}")
+        break
+
+#other logic
