@@ -37,7 +37,7 @@ for i in range(len(nums)):
         max2=nums[i]
 print(max2) """
 
-#add pairss to get sum
+""" #add pairss to get sum
 nums=[2,3,4,5,6,7,8]
 target=7                                     #brute force approach
 for i in range(len(nums)):
@@ -45,5 +45,16 @@ for i in range(len(nums)):
         if nums[i]+nums[j]==target:
             print(f"{nums[i]}+{nums[j]}={target}")
         break
-
+ """
 #other logic
+nums=[2,3,4,5,6,7,8]
+target=7
+seen=set()
+pairs=[]
+for i in nums:
+    needed=target-i
+    if needed in seen:
+        pairs.append((needed,i))
+    seen.add(i)
+pairs.sort()
+print(pairs)
