@@ -11,7 +11,7 @@ print(arr)
 print(len(arr)) """
 
 
-#longest word 
+""" #longest word 
 sent="I love: programming, so so much"
 word=list(sent.split())
 print(word)
@@ -21,3 +21,15 @@ for i in range(len(word)):
     if len(word[i])>len(longest):
         longest=word[i]
 print(longest,len(longest))
+ """
+
+#to count words
+sent="hellllooo , there   how are youuu ??"
+sent=sent.split()
+print(sent)
+list1=[]
+for i in sent:
+    if i.isalpha():
+        list1.append(i)
+print(list1)
+print(f"There are {len(list1)} words")
