@@ -24,12 +24,16 @@ print(longest,len(longest))
  """
 
 #to count words
-sent="hellllooo , there   how are youuu ??"
+sent="hellllooo, there   how are     youuu??"
 sent=sent.split()
 print(sent)
-list1=[]
+count=0
 for i in sent:
-    if i.isalpha():
-        list1.append(i)
-print(list1)
-print(f"There are {len(list1)} words")
+    clean=""
+    for ch in i:
+        if ch.isalpha():
+            clean+=ch
+    print(clean)
+    if clean:
+        count+=1
+print(f"There are {count} words")
