@@ -78,19 +78,19 @@ int main(){
     
     LinkedlistTraversal(head);
     // insert at first
-   /*  head=insertatfirst(head,0);
+    head=insertatfirst(head,0);
     printf("\n");
-    LinkedlistTraversal(head); */
+    LinkedlistTraversal(head); 
 
     // insert at index
-    /* printf("\n");
+     printf("\n");
     head=insertatindex(head,6,3);
-    LinkedlistTraversal(head); */
+    LinkedlistTraversal(head); 
 
     // insert at end
-    /* printf("\n");
+     printf("\n");
     head=insertatend(head,5);
-    LinkedlistTraversal(head); */
+    LinkedlistTraversal(head); 
 
     // insert after a node
     printf("\n");
