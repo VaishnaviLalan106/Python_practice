@@ -19,6 +19,17 @@ struct Node * insertatfirst(struct Node * head,int data){
     ptr->next=head;
     return ptr;
 }
+struct Node * insertatend(struct Node * head,int data){
+    struct Node * ptr=(struct Node *)malloc(sizeof(struct Node));
+    ptr->data=data;
+    struct Node * p = head;
+    while(p->next!=NULL){
+        p=p->next;
+    }
+    p->next=ptr;
+    ptr->next=NULL;
+    return head;
+}
 
 struct Node * insertatindex(struct Node * head,int data,int index){
     struct Node * ptr=(struct Node *)malloc(sizeof(struct Node));
@@ -62,8 +73,16 @@ int main(){
    /*  head=insertatfirst(head,0);
     printf("\n");
     LinkedlistTraversal(head); */
-    printf("\n");
+
+    // insert at index
+    /* printf("\n");
     head=insertatindex(head,6,3);
+    LinkedlistTraversal(head); */
+
+    // insert at end
+    printf("\n");
+    head=insertatend(head,5);
     LinkedlistTraversal(head);
+
     return 0;
 }
