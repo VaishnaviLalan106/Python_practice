@@ -1,4 +1,4 @@
-s="a man, a plan, a canal: panama"
+""" s="a man, a plan, a canal: panama"
 word=s.strip().lower()
 print(word)
 clean=""
@@ -13,5 +13,14 @@ for i in range(len(clean)//2):
         found = False
         break
 if found:
-    print("a palindrome")
-        
+    print("a palindrome") """
+
+#rotation
+s1=str(input("enter the string1:")).strip().lower()
+s2=str(input("enter the string2:")).strip().lower()
+word=s1+s1
+print(word)
+if s2 in word:
+    print("rotation")
+else:
+    print("not a rotation")
