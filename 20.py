@@ -20,7 +20,7 @@ s1=str(input("enter the string1:")).strip().lower()
 s2=str(input("enter the string2:")).strip().lower()
 word=s1+s1
 print(word)
-if s2 in word:
+if s2 in word and len(s1)==len(s2):
     print("rotation")
 else:
     print("not a rotation")
