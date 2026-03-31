@@ -12,13 +12,15 @@ void LinkedlistTraversal(struct Node* ptr){
         ptr=ptr->next;
     }
 }
-
+// case 1
 struct Node * insertatfirst(struct Node * head,int data){
     struct Node * ptr=(struct Node *)malloc(sizeof(struct Node));
     ptr->data=data;
     ptr->next=head;
     return ptr;
 }
+
+// case 3
 struct Node * insertatend(struct Node * head,int data){
     struct Node * ptr=(struct Node *)malloc(sizeof(struct Node));
     ptr->data=data;
@@ -30,7 +32,8 @@ struct Node * insertatend(struct Node * head,int data){
     ptr->next=NULL;
     return head;
 }
-
+ 
+// case 4
 struct Node * insertafteranode(struct Node * head,struct Node * prevNode, int data){
     struct Node * ptr=(struct Node *)malloc(sizeof(struct Node));
     ptr->data=data;
@@ -38,7 +41,7 @@ struct Node * insertafteranode(struct Node * head,struct Node * prevNode, int da
     prevNode->next=ptr;
     return head;
 }
-
+// case 2
 struct Node * insertatindex(struct Node * head,int data,int index){
     struct Node * ptr=(struct Node *)malloc(sizeof(struct Node));
     struct Node * p = head;
