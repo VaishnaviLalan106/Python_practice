@@ -31,6 +31,14 @@ struct Node * insertatend(struct Node * head,int data){
     return head;
 }
 
+struct Node * insertafteranode(struct Node * head,struct Node * prevNode, int data){
+    struct Node * ptr=(struct Node *)malloc(sizeof(struct Node));
+    ptr->data=data;
+    ptr->next=prevNode->next;
+    prevNode->next=ptr;
+    return head;
+}
+
 struct Node * insertatindex(struct Node * head,int data,int index){
     struct Node * ptr=(struct Node *)malloc(sizeof(struct Node));
     struct Node * p = head;
@@ -80,9 +88,13 @@ int main(){
     LinkedlistTraversal(head); */
 
     // insert at end
-    printf("\n");
+    /* printf("\n");
     head=insertatend(head,5);
-    LinkedlistTraversal(head);
+    LinkedlistTraversal(head); */
 
+    // insert after a node
+    printf("\n");
+    head=insertafteranode(head,second,7);
+    LinkedlistTraversal(head);
     return 0;
 }
