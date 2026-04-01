@@ -13,3 +13,14 @@ for i in range(len(sent)):
         break """
 
 
+sent="pwwkew"
+
+longest=0
+for i in range(len(sent)):
+    seen=set()
+    for j in range(i,len(sent)):
+        if sent[j] in seen:
+            break
+        seen.add(sent[j])
+    longest=max(longest,len(seen))
+print(f"longest substring without repeating characters is {longest}")
