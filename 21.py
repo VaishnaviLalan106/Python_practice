@@ -1,4 +1,4 @@
-""" sent="abcabcbb"
+sent="abcabcbb"
 print(sent)
 sets=set(sent)
 print(sets)                  #i tried to fin unique characters ,not the longest substring my mistake
@@ -38,7 +38,7 @@ for right in range(len(word)):
 
     seen.add(word[right])
     longest=max(longest,right-left+1)
-print(f"longest substring without repeating characters is {longest}") """
+print(f"longest substring without repeating characters is {longest}") 
 
 
 nums = [2,1,5,1,3,2]
