@@ -1,4 +1,4 @@
-sent="abcabcbb"
+""" sent="abcabcbb"
 print(sent)
 sets=set(sent)
 print(sets)                  #i tried to fin unique characters ,not the longest substring my mistake
@@ -53,3 +53,17 @@ for i in range(k,len(nums)):
     window_sums=window_sums-nums[i-k]+nums[i]
     max_sum=max(max_sum,window_sums)
 print(max_sum)
+ """
+
+#two sums but not brute force
+nums=[2,7,11,15]
+k=9
+target={}
+for i in range (len(nums)):
+    target[nums[i]]=i
+print(target)
+for i in range(len(nums)):
+    diff=k-nums[i]
+    if diff in target and target[diff]!=i:
+        print([i,target[diff]])
+        break
