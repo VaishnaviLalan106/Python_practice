@@ -10,7 +10,7 @@ for i in range(len(sent)):
     else:
         curve=curve+1
         print(f"longest substring without repeating characters is {len(sets)}")
-        break """
+        break 
 
 
 sent="pwwkew"
@@ -24,3 +24,32 @@ for i in range(len(sent)):
         seen.add(sent[j])
     longest=max(longest,len(seen))
 print(f"longest substring without repeating characters is {longest}")
+
+
+word="abcbcbb"
+seen=set()
+left=0
+longest=0
+
+for right in range(len(word)):
+    while word[right] in seen:
+        seen.remove(word[left])
+        left+=1
+
+    seen.add(word[right])
+    longest=max(longest,right-left+1)
+print(f"longest substring without repeating characters is {longest}") """
+
+
+nums = [2,1,5,1,3,2]
+k=3
+
+window_sums=sum(nums[:k])
+max_sum=window_sums
+print(window_sums)
+print(max_sum)
+
+for i in range(k,len(nums)):
+    window_sums=window_sums-nums[i-k]+nums[i]
+    max_sum=max(max_sum,window_sums)
+print(max_sum)
