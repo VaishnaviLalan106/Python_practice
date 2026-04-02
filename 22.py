@@ -91,3 +91,13 @@ if i>=k-1:
     else:
         result.append(0)
 print(result)
+
+#move non zero forward and zeros at end
+nums = [0,1,0,3,12]
+l=0
+for right in range(len(nums)):
+    if nums[right]!=0:
+        nums[l],nums[right]=nums[right],nums[l]
+        l+=1
+print(nums)
+
