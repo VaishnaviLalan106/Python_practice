@@ -1,4 +1,4 @@
-""" #brute force approach we all use normally
+#brute force approach we all use normally
 nums=[-3,3,4,-3,1,2]
 target=0
 set=set()
@@ -49,7 +49,7 @@ for i in range(len(nums)):
             while l<r and nums[l]==nums[l-1]:
                 l+=1
 print(res)
- """
+
 
 #first slice(as asked k , so last 2 elements should not be left , so took len-2) long string into 3 length strings and add to list to one variable.then in that each range check if negative number is present or not and append to another list
 nums=[12, -1, -7, 8, -15, 30, 16, 28]
@@ -70,3 +70,24 @@ for num in sets:
         print("No negative number is found",0)
         nets.append(0)
 print(nets)
+
+
+#optimised interview ready
+nums = [12, -1, -7, 8, -15, 30, 16, 28]
+k = 3
+negatives = []
+result = []
+for i in range(len(nums)):
+    if nums[i]<0:
+        negatives.append(nums[i])
+print(negatives)
+
+if negatives and negatives[0]<=i-k:
+    negatives.pop(0)
+
+if i>=k-1:
+    if negatives:
+        result.append(nums[negatives[0]])
+    else:
+        result.append(0)
+print(result)
