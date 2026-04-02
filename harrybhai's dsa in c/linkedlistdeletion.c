@@ -13,10 +13,35 @@ void LinkedlistTraversal(struct Node* ptr){
     }
 }
 
+// case 1
 struct Node* deleteatfirst(struct Node * head){
     struct Node*ptr=head;
     head=head->next;
     free(ptr);
+    return head;
+}
+//case 2
+struct Node * deleteatindex(struct Node *head,int index){
+    struct Node *p=head;
+    struct Node *q=head->next;
+    for(int i=0;i<index-1;i++){
+        p=p->next;
+        q=q->next;
+    }
+    p->next=q->next;
+    free(q);
+    return head;
+}
+
+struct Node* deleteatend(struct Node * head){
+    struct Node *p=head;
+    struct Node *q =head->next;
+    while(q->next!=NULL){
+        p=p->next;
+        q=q->next;
+    }
+    p->next=NULL;
+    free(q);
     return head;
 }
 
@@ -52,9 +77,18 @@ int main(){
     LinkedlistTraversal(head);
     printf("\n");
     // delete at first
-    head=deleteatfirst(head);
+    /* head=deleteatfirst(head);
+    LinkedlistTraversal(head);
+    printf("\n"); */
+
+    // delete at index
+    /* head=deleteatindex(head,3);
+    LinkedlistTraversal(head);
+    printf("\n"); */
+
+    // delete at end
+    head=deleteatend(head);
     LinkedlistTraversal(head);
     printf("\n");
-
     return 0;
 }
