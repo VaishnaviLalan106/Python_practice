@@ -20,6 +20,7 @@ struct Node* deleteatfirst(struct Node * head){
     free(ptr);
     return head;
 }
+
 //case 2
 struct Node * deleteatindex(struct Node *head,int index){
     struct Node *p=head;
@@ -32,7 +33,7 @@ struct Node * deleteatindex(struct Node *head,int index){
     free(q);
     return head;
 }
-
+//case 3
 struct Node* deleteatend(struct Node * head){
     struct Node *p=head;
     struct Node *q =head->next;
@@ -42,6 +43,20 @@ struct Node* deleteatend(struct Node * head){
     }
     p->next=NULL;
     free(q);
+    return head;
+}
+//case 4
+struct Node* deleteatgivenvalue(struct Node * head,int value){
+    struct Node *p=head;
+    struct Node *q =head->next;
+    while(q->data!=value && q->next!=NULL){
+        p=p->next;
+        q=q->next;
+    }
+    if(q->data==value){
+        p->next=q->next;
+        free(q);
+    }
     return head;
 }
 
@@ -76,18 +91,24 @@ int main(){
 
     LinkedlistTraversal(head);
     printf("\n");
+    
     // delete at first
-    /* head=deleteatfirst(head);
+    head=deleteatfirst(head);
     LinkedlistTraversal(head);
-    printf("\n"); */
+    printf("\n");
 
     // delete at index
-    /* head=deleteatindex(head,3);
+    head=deleteatindex(head,3);
     LinkedlistTraversal(head);
-    printf("\n"); */
+    printf("\n"); 
 
     // delete at end
     head=deleteatend(head);
+    LinkedlistTraversal(head);
+    printf("\n"); 
+
+    // delete a given value
+    head=deleteatgivenvalue(head,21);
     LinkedlistTraversal(head);
     printf("\n");
     return 0;
