@@ -16,9 +16,29 @@ while l<r:
      max_area=min(height[l],height[r])*(r-l)
      if max_area>maxarea:
         maxarea=max_area
-     elif height[l]>height[r]:
+     if height[l]>height[r]:
         r-=1
      else:
         l+=1
 print(f"Container with most water is {maxarea}")
     
+
+#longest subarray with sum<=k
+nums = [2,1,5,1,3,2]
+k = 7
+l=0
+sum=0
+max_len=0
+best=[]
+for r in range(len(nums)):
+    sum+=nums[r]
+    while sum>k:
+        sum-=nums[l]
+        l+=1
+    if r-l+1>max_len:
+        max_len=r-l+1
+        best=nums[l:r+1]
+print(max_len)
+print(best)
+
+
