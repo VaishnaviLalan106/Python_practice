@@ -42,3 +42,23 @@ print(max_len)
 print(best)
 
 
+#check if str contains permutation of another
+s1 = "ab"
+s2 = "eidbaooo"
+l=0
+for i in range(len(s2) - len(s1) + 1):
+    sub = s2[i:i+len(s1)]
+    print(sub)
+    found=False
+    if sorted(s1)==sorted(sub):
+        found=True
+        print(True)
+        break
+if found:
+    print("Permutation found")
+else:
+    print("Permutation not found")
+print(s2[i:i+len(s1)])
+
+
+#window means slicing of bigg arrays into smallers one and then checking use slices [i:j] or [:i] or [:j] for better understanding of slices. And for duplicates use set or sort and check. And for sum use sliding window technique. And for two pointers use l,r=0,len(nums)-1 and while l<r. And for checking if element is present in array use set or sort and check.
