@@ -91,3 +91,30 @@ for i in range(len(nums)):
         count+=hash[current_sum-k]
     hash[current_sum]=hash.get(current_sum,0)+1         #using O(n) approach
 print(count)
+ 
+#longestsubarray
+nums=[1,-1,5,-2,3]
+k=3
+maxs=0
+for i in range(len(nums)):
+    sum=0
+    for j in range(i,len(nums)):
+        sum+=nums[j]
+        if sum==k:
+            print(nums[i:j+1])
+            maxs=max(maxs,j-i+1) 
+print(maxs) 
+#longest subarray with sum==k
+nums=[1,-1,5,-2,3]
+k=3
+hash={0:-1}
+curr_sum=0
+maxs=0
+for i in range(len(nums)):
+    curr_sum+=nums[i]
+    if curr_sum-k in hash:
+        maxs=max(maxs,i-hash[curr_sum-k])
+    if curr_sum not in hash:
+        hash[curr_sum]=i
+print(hash)
+print(maxs)
