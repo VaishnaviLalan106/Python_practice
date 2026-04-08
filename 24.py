@@ -34,16 +34,32 @@ while l<r:
         l+=1
 print(f"container with most water is {res}")
 
-
 #trapping rain water 
 height=[0,1,0,2,1,0,1,3,2,1,2,1]
 res=0
+lmax=[]
+rmax=[]
 for i in range(len(height)):
-    lmax=0
-    rmax=0
-    for j in range(i):
-        lmax=max(lmax,height[j])
-    for j in range(i+1,len(height)):
-        rmax=max(rmax,height[j])
-    res+=min(lmax,rmax)-height[i]
+    lmax.append(max(height[:i+1]))
+    rmax.append(max(height[i:]))
+    print(lmax[:i+1])          #for my study purpose
+    print(rmax[i:])
+    res+=min(lmax[i],rmax[i])-height[i]
+print(res)
+
+#two pointer approach 
+height=[0,1,0,2,1,0,1,3,2,1,2,1]
+l,r=0,len(height)-1
+res=0
+lmax=height[l]
+rmax=height[r]                      #it checks lmax and rmax at each step and calculates the area
+while l<r:
+    if lmax<rmax:
+        l+=1
+        lmax=max(lmax,height[l])       #it updates lmax and rmax at each step
+        res+=lmax-height[l]              #it adds the area to the result
+    else:
+        r-=1
+        rmax=max(rmax,height[r])
+        res+=rmax-height[r]
 print(res)
