@@ -1,4 +1,4 @@
-""" sets = input("Enter string: ")
+sets = input("Enter string: ")
 print(sets)
 setu=set()
 found=False
@@ -64,7 +64,7 @@ while l<r:
         res+=rmax-height[r]
 print(res)
 
- """
+
  #using o(n^2) approach like i checks from 0 index and j also check 0 index , so subarray will be 1 then j goes to 1 index then array will be 1+1 =2 then count =1 bec sum==k
 nums=[1,1,1]
 k=2
@@ -73,8 +73,21 @@ for i in range(len(nums)):
     sum=0
     for j in range(i,len(nums)):
         sum+=nums[j]
-        print(sum)
+        #print(sum)
         if sum==k:
             count+=1
 print(count)
 
+#using hashmap and storing current prefix sum and checking if (current_sum - k) is present in hashmap
+nums=[1,1,1]
+k=2
+hash={0:1}
+current_sum=0
+count=0
+for i in range(len(nums)):
+    current_sum+=nums[i]
+    #print(sum)
+    if current_sum-k in hash:
+        count+=hash[current_sum-k]
+    hash[current_sum]=hash.get(current_sum,0)+1         #using O(n) approach
+print(count)
