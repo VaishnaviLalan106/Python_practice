@@ -1,4 +1,4 @@
-sets = input("Enter string: ")
+""" sets = input("Enter string: ")
 print(sets)
 setu=set()
 found=False
@@ -63,3 +63,18 @@ while l<r:
         rmax=max(rmax,height[r])
         res+=rmax-height[r]
 print(res)
+
+ """
+ #using o(n^2) approach like i checks from 0 index and j also check 0 index , so subarray will be 1 then j goes to 1 index then array will be 1+1 =2 then count =1 bec sum==k
+nums=[1,1,1]
+k=2
+count=0
+for i in range(len(nums)):
+    sum=0
+    for j in range(i,len(nums)):
+        sum+=nums[j]
+        print(sum)
+        if sum==k:
+            count+=1
+print(count)
+
