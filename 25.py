@@ -13,3 +13,11 @@ while r<len(input):
     r+=1
 print(max_profit)
 
+nums = [4, 2, -3, 1, 6]
+for i in range(len(nums)):
+    curr_sum=0
+    for j in range(i, len(nums)):
+        curr_sum+=nums[j]
+        if curr_sum==0:
+            print(nums[i:j+1])
+            
