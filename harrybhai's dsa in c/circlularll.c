@@ -29,7 +29,40 @@ struct Node *insertatfirst(struct Node *head,int data){
     return head;
 }
 
+struct Node * insertatindex(struct Node * head,int data,int index){
+    struct Node * ptr=(struct Node *)malloc(sizeof(struct Node));
+    ptr->data=data;
+    struct Node *p=head;
+    int i=0;
+    while(i!=index-1){
+        p=p->next;
+        i++;
+    }
+    ptr->next=p->next;
+    p->next=ptr;
+    return head;
+}
 
+struct Node * insertatend(struct Node *head,int data){
+    struct Node *ptr=(struct Node*)malloc(sizeof(struct Node));
+    ptr->data=data;
+    struct Node *p =head;
+    while(p->next!=head){
+        p=p->next;
+    }
+    // here p is pointing to the last node of circular linked list
+    p->next=ptr;
+    ptr->next=head;
+    return head;
+}
+
+struct Node * insertafternode(struct Node * head,struct Node * prevNode,int data){
+    struct Node * ptr=(struct Node*)malloc(sizeof(struct Node));
+    ptr->data=data;
+    ptr->next=prevNode->next;
+    prevNode->next=ptr;
+    return head;
+} 
 
 int main(){
     struct Node *head;
@@ -59,13 +92,28 @@ int main(){
     // to put fourth node and terminate it
     fourth->data=66;
     fourth->next=head;
-    
-    printf("linked list before insertion\n");
     traversal(head);
-    
-    // after insertion 
-    printf("linked list after insertion\n");
+    printf("\n");
+
+    // insert at first
     head=insertatfirst(head,54);
     traversal(head);
+    printf("\n"); 
+
+    // insert at index
+    head=insertatindex(head,45,3);
+    traversal(head);
+    printf("\n");
+
+    // insert at end
+    head=insertatend(head,23);
+    traversal(head);
+    printf("\n"); 
+
+    // insert after a node
+    head=insertafternode(head,second,12);
+    traversal(head);
+    printf("\n");
+
     return 0;
 }
